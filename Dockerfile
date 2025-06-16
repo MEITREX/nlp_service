@@ -20,6 +20,6 @@ CMD ollama serve & \
     sleep 5 && \
     ollama pull llama3:8b-instruct-q4_0 && \
     ollama create llama3-instruct-8b:titles -f /models/llama-3-8b-instruct/titles/Modelfile && \
-    ollama create llama3-instruct-8b:titles -f /models/llama-3-8b-instruct/titles-small/Modelfile && \
-    ollama create llama3-instruct-8b:titles -f /models/llama-3-8b-instruct/titles-full-sliding-20k/Modelfile && \
+    ollama create llama3-instruct-8b:titles-small -f /models/llama-3-8b-instruct/titles-small/Modelfile && \
+    ollama create llama3-instruct-8b:titles-full-sliding-20k -f /models/llama-3-8b-instruct/titles-full-sliding-20k/Modelfile && \
     tail -f /dev/null
