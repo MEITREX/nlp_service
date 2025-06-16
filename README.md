@@ -34,7 +34,7 @@ We assume the following software packages are installed:
 We refer to llama3.cpp’s base dir as **llama3_cpp_dir** in the following. 
 
 #### Base Model
-We assume the base model to be present in line with the huggingface repository strucuture, i.e. [llama3-instruct-8b](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct). We refer to a base model's repository’s local path by **base_model_dir**. If you have not done so, create a such a local copy using git clone. 
+We assume the base model to be present in line with the huggingface repository strucuture, i.e. [llama3-instruct-8b](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct). We refer to the local path of the base model’s repository as base_model_dir. If you haven’t already, clone the repository using git clone.
 
 #### Fine-Tuned Model
 
