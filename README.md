@@ -1,4 +1,4 @@
-# llm_service
+nlp_service
 This service provides REST API access to Large Language Models via [OLLAMA](https://ollama.com), including both widely available models and those specifically fine-tuned for MEITREX-specific tasks. Currently, the following models are available: 
 
 * llama3:8b-instruct-q4_0
