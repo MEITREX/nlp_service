@@ -1,0 +1,13 @@
+.DS_Store
+venv
+.vscode
+.idea
+*.mp3
+*.mp4
+*.wav
+*.vtt
+*.pdf
+*.ppt
+*.pptx
+__pycache__
+llm_data
