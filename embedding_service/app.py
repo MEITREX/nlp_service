@@ -24,7 +24,7 @@ def embedd(words: List[str] = Query(...)) -> List[List[float]]:
     return param.tolist()
 
 
-# Driver code
+# Driver code exposing the service at port 11435
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=11435)
