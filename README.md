@@ -19,7 +19,10 @@ To install and start the service, run the following commands:
 * docker run -p 11434:11434 -p 11435:11435 nlp-service
 
 ## Project Structure
-To make publicly available models accessible via **OLLAMA**, the `'Create LoRA models'` section in the Dockerfile must be adjusted accordingly. Fine-tuned models and their configurations, on the other hand, are provided through the **`/models`** directory. For the current base model **`llama3-instruct-8b`**, each LoRA fine-tuned variant is located in a corresponding subdirectory under: **`/models/llama3-instruct-8/[fine-tuned-model-name]`**, including both the corresponding OLLAMA model and adapter file in **GGUF format**. 
+To make publicly available models accessible via **OLLAMA**, the `'# Pull and create models'` section in `'start.sh must'` be adjusted accordingly. Fine-tuned models and their configurations, on the other hand, are provided through the **`/models`** directory. For the current base model **`llama3-instruct-8b`**, each LoRA fine-tuned variant is located in a corresponding subdirectory under: **`/models/llama3-instruct-8/[fine-tuned-model-name]`**, including both the corresponding OLLAMA model and adapter file in **GGUF format**. Again, `'start.sh must'` must be modified to include thereby customized models. 
+
+For embedding generation, the required model 'gte-large-en-v1.5' must be placed in './embedding_service/llm_data/models/'. Both the currently used adapters and the gte-large-en-v1.5 model are hosted at: external@129.69.217.248:/home/external/Meitrex/resources/.
+
 
 ## Adding Furhter LoRA Fine-Tuned Models
 This paragraph outlines the process of converting the results of LoRA-based fine-tuning — initially stored in .safetensors format — into a .gguf-compliant adapter file compatible with the llama3-instruct-8b base model. This adapter file is then integrated into an OLLAMA model using the ADAPTER directive. Additionally, the document describes the steps for Docker-based provisioning of the resulting custom models.
