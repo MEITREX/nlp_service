@@ -74,8 +74,10 @@ We subsequently refer to this directory by fine_tuned_model_dir.
 
 4. Create an OLLAMA model file **/base_model_dir/fine-tuned-model-dir/Modelfile** loading the base model and referring to the previously created adapter file. 
 
-5. Finally, integrate the Ollama model file into the Dockerfile by adding the following line to the `'Create LoRA models'` section: 
-- ollama create model_name -f /base_model_dir/fine-tuned-model-dir/Modelfile && \
+5. Finally, integrate the respective Ollama model file into 'start.sh' by adding the following line: 
+- ollama create model_name -f /base_model_dir/fine-tuned-model-dir/Modelfile 
+
+
 
 
 
