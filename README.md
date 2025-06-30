@@ -1,4 +1,4 @@
-nlp_service
+# nlp_service
 This service provides REST API access to Large Language Models via [OLLAMA](https://ollama.com), including both widely available models and those specifically fine-tuned for MEITREX-specific tasks. Currently, the following models are available: 
 
 * llama3:8b-instruct-q4_0
@@ -9,17 +9,18 @@ This service provides REST API access to Large Language Models via [OLLAMA](http
 
 * llama3-instruct-8b:titles_full_sliding_20k
  
-A comprehensive overview of these models and their properties is available at [/api/tags](http://129.69.217.248:11434/api/tags). For a detailed treatment of OLLAMA's REST API, we refer to the official [documentation](https://github.com/ollama/ollama/blob/main/docs/api.md). Additionally, nlp_service the sub module emebdding_service implements a REST api for embedding generation thereby supporting semantic search. 
+A comprehensive overview of these models and their properties is available at [/api/tags](http://129.69.217.248:11434/api/tags). For a detailed treatment of OLLAMA's REST API, we refer to the official [documentation](https://github.com/ollama/ollama/blob/main/docs/api.md). Additionally, nlp_service implements a REST api for the generation of semantic emebeddings.
 
 ## Getting Started
 To install and start the service, run the following commands:
-* git clone https://github.com/MEITREX/llm_service
-* cd ./llm_service
+* git clone https://github.com/MEITREX/nlp_service
+* cd ./nlp_service
+* Add the required resourced described in the section `Project Structure`
 * docker build -t nlp_service .
 * docker run -p 11434:11434 -p 11435:11435 nlp-service
 
 ## Project Structure
-To make publicly available models accessible via **OLLAMA**, the `'# Pull and create models'` section in `'start.sh must'` be adjusted accordingly. Fine-tuned models and their configurations, on the other hand, are provided through the **`/models`** directory. For the current base model **`llama3-instruct-8b`**, each LoRA fine-tuned variant is located in a corresponding subdirectory under: **`/models/llama3-instruct-8/[fine-tuned-model-name]`**, including both the corresponding OLLAMA model and adapter file in **GGUF format**. Again, `'start.sh must'` must be modified to include thereby customized models. 
+To make publicly available models accessible via **OLLAMA**, the `# Pull and create models` section in `start.sh` must be adjusted accordingly. Fine-tuned models and their configurations, on the other hand, are provided through the **`/models`** directory. For the current base model **`llama3-instruct-8b`**, each LoRA fine-tuned variant is located in a corresponding subdirectory under: **`/models/llama3-instruct-8/[fine-tuned-model-name]`**, including both the corresponding OLLAMA model and adapter file in **GGUF format**. Again, `'start.sh must'` must be modified to include thereby customized models. 
 
 For embedding generation, the required model 'gte-large-en-v1.5' must be placed in './embedding_service/llm_data/models/'. Both the currently used adapters and the gte-large-en-v1.5 model are hosted at: external@129.69.217.248:/home/external/Meitrex/resources/.
 
