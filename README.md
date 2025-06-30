@@ -9,14 +9,14 @@ This service provides REST API access to Large Language Models via [OLLAMA](http
 
 * llama3-instruct-8b:titles_full_sliding_20k
 
-A comprehensive overview of these models and their properties is available at [/api/tags](http://129.69.217.248:11434/api/tags). For a detailed treatment of OLLAMA's REST API, we refer to the official [documentation](https://github.com/ollama/ollama/blob/main/docs/api.md).  
+A comprehensive overview of these models and their properties is available at [/api/tags](http://129.69.217.248:11434/api/tags). For a detailed treatment of OLLAMA's REST API, we refer to the official [documentation](https://github.com/ollama/ollama/blob/main/docs/api.md). Additionally, nlp_service the sub module emebdding_service implements a REST api for embedding generation thereby supporting semantic search. 
 
 ## Getting Started
 To install and start the service, run the following commands:
 * git clone https://github.com/MEITREX/llm_service
 * cd ./llm_service
-* docker build -t ollama-meitrex .
-* docker run -p 11434:11434 ollama-meitrex
+* docker build -t nlp_service .
+* docker run -p 11434:11434 -p 11435:11435 nlp-service
 
 ## Project Structure
 To make publicly available models accessible via **OLLAMA**, the `'Create LoRA models'` section in the Dockerfile must be adjusted accordingly. Fine-tuned models and their configurations, on the other hand, are provided through the **`/models`** directory. For the current base model **`llama3-instruct-8b`**, each LoRA fine-tuned variant is located in a corresponding subdirectory under: **`/models/llama3-instruct-8/[fine-tuned-model-name]`**, including both the corresponding OLLAMA model and adapter file in **GGUF format**. 
