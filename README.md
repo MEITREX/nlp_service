@@ -8,7 +8,7 @@ This service provides REST API access to Large Language Models via [OLLAMA](http
 * llama3-instruct-8b:titles_small
 
 * llama3-instruct-8b:titles_full_sliding_20k
-
+ 
 A comprehensive overview of these models and their properties is available at [/api/tags](http://129.69.217.248:11434/api/tags). For a detailed treatment of OLLAMA's REST API, we refer to the official [documentation](https://github.com/ollama/ollama/blob/main/docs/api.md). Additionally, nlp_service the sub module emebdding_service implements a REST api for embedding generation thereby supporting semantic search. 
 
 ## Getting Started
