@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  nlp-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nlp-service
+    ports:
+      - "11434:11434"
+      - "11435:11435"
+    restart: unless-stopped
