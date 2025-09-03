@@ -3,6 +3,7 @@ from typing import List
 import uvicorn
 import yaml
 from fastapi import FastAPI, Query
+from pydantic import BaseModel
 
 from sentence_transformers import SentenceTransformer
 
@@ -18,9 +19,13 @@ model = SentenceTransformer(model_path, trust_remote_code=True)
 app = FastAPI()
 
 
-@app.get("/embed")
-def embedd(words: List[str] = Query(...)) -> List[List[float]]:
-    param = model.encode(words)
+class EmbedRequest(BaseModel):
+    words: List[str]
+
+
+@app.post("/embed")
+def embedd(request: EmbedRequest) -> List[List[float]]:
+    param = model.encode(request.words)
     return param.tolist()
 
 
